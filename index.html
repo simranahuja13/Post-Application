@@ -6,57 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="onPageLoadFunc()">
     <div class="main-page">
         <div class="left-container">
             <div class="data">
                 <h1>
                     Post Office Application.
                 </h1>
-                <p>This Application Allows you to extract information about the nearest Post Offices, based on your location.
+                <p>This Application Allows you to extract information about the nearest Post Offices, based on your
+                    location.
             </div>
-           
-                <div class="center-img">
-                    <img src="images/undraw_messenger_re_8bky 1.svg" alt="left-container-image">
-                </div>
-              
-            
+
+            <div class="center-img">
+                <img src="images/undraw_messenger_re_8bky 1.svg" alt="left-container-image">
+            </div>
+
+
         </div>
         <div class="right-container">
             <div class="center">
-                <h1> Current IP Address is <span>4567.897</span></h1>
+                <h1> Current IP Address is <span class="IPAddress"></span></h1>
                 <div class="btn-center">
-                    <button type="button" class="btn" id="getIPBtn " onclick="getStartedFun()">Get Started</button>
+                    <a href="#second"> <button type="button" class="btn" id="getStarted" onclick="getStartedFunc()">Get
+                            Started</button></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="second-page">
+    <div class="second-page" id="second">
         <div class="upper-section">
-            <h1>IP Address : <span>223.67.8</span></h1>
+            <h1>IP Address : <span class="IPAddress"></span></h1>
             <div class="three-sections">
                 <div>
-                    <h1>Lat:</h1>
-                    <h1>Long:</h1>
+                    <h1>Lat: <span id="spanLat"></span></h1>
+                    <h1>Long: <span id="spanLong"></span></h1>
                 </div>
                 <div>
-                    <h1>City:</h1>
-                    <h1>Region:</h1>
+                    <h1>City : <span id="city"> </span> </h1>
+                    <h1>Region: <span id="region"></span></h1>
                 </div>
                 <div>
-                    <h1>Organisation:</h1>
-                    <h1>Hostname:</h1>
+                    <h1>Organisation : <span id="org"></span></h1>
+                    <h1>Hostname: <span id="host"></span></h1>
                 </div>
             </div>
         </div>
-        <div class="bottom-section">
-            <h1>Your Current Location</h1>
+        <div id="bottom-section">
+            <!-- <h1>Your Current Location</h1> -->
+          
+
         </div>
+        <center id="center">
+            <!-- map to be shown here -->
+           </center>
+
+    </div>
+    <div class="third-page">
+        <h1>More Information About You</h1>
+
+        <h3>Time Zone: <span id="timezone"></span></h3>
+        <h3>Date and Time: <span id="date-time"></span></h3>
+        <h3>Pincode: <span id="pincode"></span></h3>
+        <h3>Message:  <span id="noOfPost"></span></h3>
+      
+
+        <h1> Post Offices Near You </h1>
+        <div class="third-page-container">
+            <input type="text" id="search-input" placeholder=" 🔍 Search by Name" onkeyup="searchPost()">
+            <div class="grid-container">
+               
+               
+                
+            </div>
+        </div>
+
     </div>
     <script src="index.js"></script>
+
 </body>
 
 </html>

@@ -9,8 +9,13 @@ Css for Universal selector   */
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
-    scroll-behavior: smooth;
     color: white;
+
+}
+
+body::-webkit-scrollbar {
+    /* Hiding scrollbar but functionality would be same*/
+    display: none;
 }
 
 /* Color variables */
@@ -29,6 +34,7 @@ body {
     height: 100vh;
     width: 100vw;
     display: flex;
+    
 }
 
 .left-container {
@@ -43,20 +49,23 @@ body {
     height: 100%;
     background-color: var(--semi-light-purple);
 }
-.left-container > .center-img{
- 
-  height: 350px;
-  width: 350px ;
-  display: flex;
-  justify-content: center;
-  margin-left: 25%;
-  margin-top: 10%;
-  
+
+.left-container>.center-img {
+
+    height: 350px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    margin-top: 10%;
+
 }
-.left-container> img{
+
+.left-container>img {
     width: 100%;
     height: 100%;
 }
+
 .left-container>.data {
     padding: 10px 0 0 10px;
 
@@ -103,56 +112,121 @@ body {
     border: 1px solid var(--light-purple);
     border-radius: 10px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         color: #000;
     }
 }
 
 .second-page {
-    height: 100vh;
-    background: red;
+    /* height: 100vh; */
+    background: var(--semi-light-purple);
 }
 
 .second-page>.upper-section {
     height: 40vh;
     width: 100vw;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
 
 
 }
 
-.second-page>.upper-section>h1 {
+.second-page>.upper-section>h1,
+.third-page>h3 {
     font-size: 20px;
     font-weight: 400;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-left: 30px;
     color: var(--light-purple)
-
 }
 
 .second-page>.upper-section>.three-sections {
-   display: grid;
-   grid-template-columns: auto auto auto;
-   padding-left: 30px;
-   padding-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 30px;
+    padding-top: 20px;
 
 
 }
+
 .second-page>.upper-section>.three-sections>div>h1 {
     font-size: 20px;
     font-weight: 400;
-    color:  var(--light-purple)
-    ;
+    color: var(--light-purple);
 }
-.second-page>.bottom-section{
-    height: 60vh;
+
+.second-page>#bottom-section {
+    /* height: 60vh; */
     width: 100vw;
     background: var(--semi-light-purple);
 }
-.second-page>.bottom-section>h1{
+
+.second-page>#bottom-section>h1,
+.third-page>h1 {
     font-size: 30px;
     font-weight: 600;
     padding-top: 20px;
-  text-align: center;
+    text-align: center;
     color: var(--light-purple)
+}
+
+.third-page {
+    background: rgb(0, 0, 0)
+}
+
+.third-page>h3>.span {
+    font-weight: 100;
+}
+
+.third-page>.third-page-container {
+    padding: 30px;
+}
+
+.third-page>.third-page-container>input {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #575A85;
+    border-radius: 3px;
+
+    &:placeholder-shown {
+        font-size: 15px;
+    }
+
+}
+
+.third-page-container .grid-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    gap: 50px;
+    margin-top: 20px;
+ 
+}
+@media (max-width:600px){
+    .third-page-container .grid-container {
+        display: grid;
+       
+        grid-template-columns: auto;
+    }
+}
+.third-page-container .grid-container>div {
+    /* border: 1px solid white; */
+    border-radius: 4px;
+    background: var(--semi-light-purple);
+    padding: 10px;
+ 
+}
+
+.third-page-container .grid-container>div> h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--light-purple);
+    padding: 5px 0;
+    margin-right:  10px;
+
+}
+.third-page-container .grid-container>div> .grid-item > span{
+    font-size: 10px;
 }
